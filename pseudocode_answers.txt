@@ -1,0 +1,63 @@
+Short Answers
+
+1. Why do programmers use pseudocode?
+
+   A: Programmers use pseudocode to explain to other 
+      people what a particular program will do. It 
+      allows programmers to brainstorm about algorithms
+      before they are coded in a particular language.
+
+2. If you run pseudocode on your computer what would happen?
+
+   A: If you run pseudocode on your computer it will not run.
+      It isn't written in a computer language. It is written
+      in a way that is easy for people to understand. A computer
+      will not be able to "comprehend" it.
+
+Programming Assignment
+
+1. Create a function that takes two numbers and prints out the greater
+   number.
+
+   A: FUNCTION greaterNumber(firstNumber, secondNumber)
+        IF the firstNumber is greater than the secondNumber THEN
+          PRINT firstNumber
+        ELSE IF the secondNumber is greater than the firstNumber THEN
+          PRINT secondNumber
+        ELSE
+          PRINT "These numbers are equal."
+        END IF
+      END FUNCTION
+
+2. Create a function that prints out the numbers from 1 to 100.
+
+   A: FUNCTION oneToHundred()
+        FOR Index SET to 0; Index less than 100; INCREMENT Index by one each time through the loop
+	  PRINT Index plus 1
+	END LOOP
+      END FUNCTION
+
+3. Create a function that searches for a specific entry in a phonebook.
+
+   A: FUNCTION findEntry(name)
+        SET phoneBook equal to an object that is POPULATED with objects that each have Names and Numbers
+        LET phoneBookMap equal a NEW instance of Map which includes the entries in phoneBook
+        RETURN the Number associated with the Name that was ENTERED as the GET functions parameter 
+      END FUNCTION
+
+4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+   A: function findEntry(name) {
+        let phoneBook = {  
+          Dave: '619-867-5309',
+          Jim: '702-555-5555',
+          Bill: '817-951-3576'
+        };
+  
+        let phoneBookMap = new Map(Object.entries(phoneBook));
+        return phoneBookMap.get(name);                         
+      }
+
+      console.log(findEntry('Dave'));    // Test Cases
+      console.log(findEntry('Jim'));
+      console.log(findEntry('Bill'));
