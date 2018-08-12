@@ -1,0 +1,95 @@
+
+1. A line of people at an amusement park ride.
+
+    The line is composed of members, represented as strings.
+    There is a front to the line, as well as a back.
+    When someone enters the line, place them at the end.
+    People may leave the line whenever they see fit, and those behind them take their place.
+
+Given the above real-world information, use an array data structure to code the following solution.
+
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+   A: var lineMembers = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+   A: function addMember(group, name){
+  	group.push(name);
+      }
+
+      addMember(lineMembers, "Mary");
+
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+   A: function findMember(group, name){
+  	for (index = 0; index < group.length; index++) {
+    	  if (group[index] === name) {
+      	    return index;
+          }else{
+          return "Person not found in the line!"
+          }
+        }
+      }
+     
+      findMember(lineMembers, "Josh");
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+   A: function findMember(group, name){
+  	for (index = 0; index < group.length; index++) {
+    	  if (group[index] === name) {
+      	    return index;
+          }else{
+          return "Person not found in the line!"
+          }
+        }
+      }
+
+
+      findMember(lineMembers, "Emily");
+
+      It should return "Person not found in the line!"
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+   
+   A: function cutLineMember(group, currentMember, newMember){
+  	for (index = 0; index < group.length; index++){
+    	  if (group[index] === currentMember){
+      	    group.splice(index, 0, newMember);
+      	    break;
+          }
+        }
+      }
+
+      cutLineMember(lineMembers, "Ava", "Melissa");
+
+f) If Patrick wants to leave the line, how would you delete him from the array? 
+
+
+   A: function leaveLine(group, member){
+        for (index = 0; index < group.length; index++){
+           if (group[index] === member){
+             group.splice(index, 1);
+           }
+        }
+      }
+
+      leaveLine(lineMembers, "Patrick");
+
+2. Provide another real-world example that you can model using a data structure.
+
+   A: Another real-world example that could be modeled using
+      a data structure is average temperature for each month
+      in a year.
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+   It would give them a key at each index of the array which would indicate the month. Also, with each key there 
+   would be an associated value. For this particular case it would be the 
+   average temperature in whatever unit of measurement would be appropriate (for example: celcius).
+
+
+
+
+
