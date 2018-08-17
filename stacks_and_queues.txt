@@ -1,0 +1,111 @@
+
+
+1. What is the main difference between a stack and a queue?
+
+> A: The main difference between a stack and a queue has to 
+     do with their priority collection. The stack implements a 
+     LIFO priority collection. This means whatever data arrives
+     last will be examined first by the software. The queue implements a FIFO 
+     priority collection. This means whatever data arrives first
+     will be examined first by the software.
+
+2. What are the similariteies between stacks and queues?
+
+> A: They are both data structues.  Both are used for storing the elements in 
+     the list and performing operations on the list like addition and deletion 
+     of the elements. 
+
+3. Imagine you are an engineer tasked with implementing the 
+   UNDO and REDO options in a word processor such as Microsoft
+   Word. Which data structure would you use for each option
+   and why?
+
+> A: I would use stack for both UNDO and REDO. Since the user would be trying
+     to use data that was entered last (just entered) I would use stack for this
+     since it's priority collection structure is LIFO (Last IN FIRST OUT).
+
+
+Programming Questions
+
+1. Given a string, reverse it using a stack. For example,
+   the string "Bloc!" should be converted to "!colB".
+
+> A: 
+
+function reverse(string){
+  var stack = [];  
+  for (var index = 0; index < string.length; index++){
+    stack.push(string[index]);
+  }
+  var reverseString = '';
+  while (stack.length > 0) {
+    reverseString += stack.pop();
+  }
+  return reverseString;
+}
+
+console.log(reverse("Racecar"));
+
+
+2. Implement the pop method of a stack using one queue. 
+   Make a FIFO data structure mirror the functionality 
+   of a LIFO data structure. Since the internal list is 
+   not the same as defined in the checkpoint, it may 
+   help to rewrite the pseudocode first.
+
+> A: 
+
+var stack = [1, 2, 3, 4, 5];
+
+function QueuePop(stack){
+  var newQueue = stack.splice(0, stack.length - 1);
+  return newQueue
+  
+}
+
+console.log(QueuePop(stack));
+
+
+To delete an item, take all of the elements in the queue
+one at a time and put them at the end of the queue, 
+except for the last one which should be removed and 
+returned.
+
+1. Implement the enqueue and dequeue methods defined in
+   the checkpoint inside your own Queue class.
+
+> A: 
+
+var Queue = function() {
+  this.first = null;
+  this.size = 0;
+};
+
+var Node = function(element) {
+  this.element = element;
+  this.next = null;
+};
+
+Queue.prototype.enqueue = function(element) {
+  var node = new Node(element);
+
+  if (!this.first){
+    this.first = node;
+  } else {
+    n = this.first;
+    while (n.next) {
+      n = n.next;
+    }
+    n.next = node;
+  }
+
+  this.size += 1;
+  return node;
+};
+
+Queue.prototype.dequeue = function() {
+  temp = this.first;
+  this.first = this.first.next;
+  this.size -= 1;
+  return temp;
+};
