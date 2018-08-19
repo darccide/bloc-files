@@ -1,0 +1,58 @@
+1. Using proper pseudo-code, describe the following 
+   primitive algorithms:
+
+    Making coffee;
+    Washing dishes;
+    A choice of your own.
+
+   A: 
+    Making coffee;
+        First add water to coffee pot
+        Add coffee grounds to coffee pot
+        Turn on coffee pot
+ 
+    Washing dishes;
+        Turn on water
+        Add soap to water and fill sink up
+        Turn off the water
+        Wash the dishes
+ 
+    Brushing Teeth;
+         Open toothpaste
+         Put toothpaste on toothbrush
+         Brush teeth
+
+2. As with the knot algorithm, there may be more than 
+   one way to solve the problem. It is essential to 
+   try to pick the best algorithm for a situation. 
+   Name three companies who created an algorithm that 
+   made them successful, e.g., Google's search algorithm. 
+   It doesn't need to be a tech example (such as a recipe 
+   or manufacturing a product). Google's algorithm 
+   produces more relevant results than other search 
+   engines; what about each of your cases make them 
+   stand out?
+
+   A: 
+
+   1. PKWare was founded by Phil Katz in 1986 after he 
+      invented the ZIP file compression algorithm. The 
+      ZIP file is now completely ubiquitous, being 
+      incorporated into every major OS and also into Java.
+
+ 
+   2. RSA Data Security, founded by the inventors of the 
+      RSA public-key encryption algorithms which are used
+      widely for securing data transmission.
+
+   3. TrafficCast International was founded on a series of 
+      patented mathematical algorithms and methods to 
+      continuously calculate traffic networks from tons of 
+      data streams.
+
+3. Hypothesize about what constitutes an efficient algorithm 
+   versus an inefficient algorithm.
+
+   A: An efficient algorithm will have a logical order to its
+      steps. An inefficient algorithm will not have such a 
+      logical order.
