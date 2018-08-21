@@ -1,0 +1,134 @@
+1. Define and compare recursion and iteration.
+
+   A: First Definitions:
+   
+      Recursion: The technique where a procedure calls
+                 itself with parameters incrementally 
+                 moving toward a/one of the base cases.
+
+      Iteration: The technique of utilizing a loop to 
+                 repeat a process.
+
+
+      Recursion tends to be a slower approach and more
+      bound by system limitations in comparison to 
+      iteration. Iteration can be more difficult to 
+      implement that recursion.
+
+2. Name five algorithms that are commonly implemented 
+   by recursion.
+
+   A: Five algorithms that are commonly implemented by 
+      recursion are binary search, merge sort, quick 
+      sort, the factorial operation, and the fibonacci 
+      sequence
+
+3. When should you use recursion, and when should you 
+   avoid recursion? Give examples for each.
+
+   A: Recursion should be used when an algorithm can be
+      defined as a combination of sub-results starting
+      with one or more known cases (example: factorial).
+      It should not be used when the algorithm you need 
+      has to pass over a collection of data (example: 
+      Finding the maximum). Some in-depth examination 
+      of the cost of implementation should also be taken
+      into account (example: Fibonacci Sequence).
+
+4. Compare the recursive and iterative solutions to the 
+   three algorithms from the checkpoint (factorial, 
+   maximum, and fibonacci). What is similar, and what is
+   different?
+
+   A: 
+
+      Factorial: The recursive solution is much cleaner
+                 in terms of code and is more 
+                 straightforward in implementation.
+
+      Maximum: The iterative solution is much cleaner
+               and simpler than the recursive solution.
+               This makes sense as the algorithm needs
+               To process a collection of data.
+
+      Fibonacci: This is where we see a complicated 
+                 differentiation. This algorithm is 
+                 defined recursively (in mathematics)
+                 and is more intuitive when approached 
+                 from that direction. However, the 
+                 iterative solution is not so 
+                 complicated and each repeated 
+                 calculation will slow the performance 
+                 of the recursive solution.
+
+5. Given a multi-dimensional collection (such as an 
+   array) where the number of dimensions is unknown, 
+   write a recursive algorithm to count the number of 
+   items in the entire collection.
+
+   A: 
+
+      function collectionCount(array) {
+        var count = 0;
+        // iterate array using forEach
+        array.forEach(function(element) {
+          // checking array element is an array
+          if (typeof element == 'object')
+            // if array then getting it's element count (recursion)
+            count += collectionCount(element);
+          else
+            // else adding increment count
+            count++;
+        })
+        // return the result
+        return count;
+       }
+
+       console.log(collectionCount([2, 5, [3, 1], 4]));
+
+6. A palindrome is a word or phrase whose spelling is 
+   the same either direction (e.g., racecar). Write a 
+   recursive algorithm to determine if a given word or 
+   phrase is a palindrome.
+
+   A: 
+     
+      var isPalindrome = function(string) {
+        var stringLength = string.length;
+          // if the string has zero or one character case
+          if (stringLength === 0 || stringLength === 1) {
+            // it must be a palindrome
+            return true; 
+          }
+          // if string has two or more characters case
+          if (string[0] === string[stringLength - 1]) {
+            // check if it is a palindrome (recursively)
+            return isPalindrome( string.slice(1, stringLength - 1) );
+          }
+          // return that the string is not a palindrome
+          return false;
+      };
+
+      console.log(isPalindrome('racecar'));
+      console.log(isPalindrome('banana'));
+
+7. Google Easter Egg: Google the term "recursion". 
+   Google will prompt you with "Did you mean: recursion".
+   Explain why this behavior exhibits properties of 
+   recursion.
+
+   A: The definition of recursion on Google is "the 
+      repeated application of a recursive procedure or 
+      definition." Normally if you search something on 
+      Google it will try to find the exact search or 
+      find the closest approximation. The word 
+      "recursion" has its closest approximation with 
+      itself. This of course is fun for anyone who 
+      understands that when Google asks 
+      "Did you mean: recursion" it is repeatedly 
+      applying its search approximation procedure on the
+      word recursion. The search procedure is a 
+      recursive process about recursion. It is 
+      constantly appealing to itself about itself. This 
+      is how this behavior exhibits properties of 
+      recursion.
