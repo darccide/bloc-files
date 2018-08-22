@@ -1,0 +1,113 @@
+Short Answer
+
+1. What is a real-life scenario that uses linear search?
+
+   A: Suppose there are 30 students in a library 
+      (so you can¡¯t shout) and you want a 
+      child named Roberto, than the only way to find
+      him is to go to each and every child and ask his name. 
+      This is a real-life scenario that uses linear search.
+
+2. What is a real-life scenario that uses binary search?
+
+   A: Suppose you are searching for a book in the library. 
+      Here our ordered list is the well-arranged books in 
+      an alphabetical order. Our target element is the book 
+      we want to read. Instead of running around in circles 
+      and ruffling through every rack to find our book we can
+      apply this algorithm to find that book. All we need to 
+      do is determine the total number of racks, then find 
+      the middle rack. If we don¡¯t find the book, then we 
+      can determine whether to omit the first half of the 
+      racks or the second half. We can repeat this process 
+      until we finally find our book or run out of racks 
+      to look in.
+
+3. Given the alphabetically sorted collection in this 
+   checkpoint, how many iterations would it take to 
+   find the value G using linear search?
+
+   A: It would take seven iterations to find the value G 
+      using linear search.
+
+4. Given the alphabetically sorted collection in this 
+   checkpoint, how many iterations would it take to
+   find the value G using binary search?
+  
+   A: It would take three iterations to find the value G
+      using binary search.
+
+5. Given an unsorted collection of a million items, 
+   which algorithm would you choose between linear 
+   search and binary search? Explain your reasoning.
+
+   A: I would use linear search because the items are
+      not sorted. If the items are not sorted then 
+      a binary search cannot be used.
+
+6. Given a sorted collection of a million items, which 
+   algorithm would you choose between linear search and 
+   binary search? Explain your reasoning.
+
+   A: I would use binary search because the items are
+      sorted. Since the items are sorted, the binary
+      search is usable on this collection. It would be
+      much more efficient (require less iterations) on 
+      a sorted list of this size than a linear search.
+
+Programming Assignment:
+
+1. You and a friend have set a wager to see who can find
+   the word "Albatross" in the dictionary the fastest. 
+   Write a program to allow you to win the bet.
+
+   A: 
+
+      var myDictionary = ["Abacus", "Acerbic", "Albatross", "Amplify", "Apt", "Anthem", "Axiom"];
+
+      function findWord(dictionary, word){ 
+        var low = dictionary[0];
+        var high = dictionary[dictionary.length -1];
+
+        while (low <= high) {
+          var middle = (dictionary.indexOf(low) + dictionary.indexOf(high)) / 2;
+          middle = Math.round(middle);
+    
+          if (dictionary[middle] > word) { 
+            high = dictionary[middle -1];
+          } 
+          else if (dictionary[middle] < word) {
+            low = dictionary[middle + 1];
+          }
+          else {
+            return dictionary[middle];
+          }
+        }
+        return "That name is not in the dictionary!";
+      }
+
+      console.log(findWord(myDictionary, "Albatross"));
+
+2. You work at a pet store, and a child has asked you to
+   net the only white-spotted goldfish from the fish 
+   tank. Write a program that will help you net the right
+   fish.
+
+   A: 
+
+      var fishInFishTank = ["goldfish", "fighting fish", "white-spotted goldfish"];
+   
+      
+      var findFish = function(fishCollection, desiredFish) {
+        var result = null
+        var value;
+        for (var index = 0; index < fishCollection.length; index++) {
+          value = fishCollection[index];
+          if (value === desiredFish){
+            return `You found the ${desiredFish}.`
+          }
+        }
+        return Your fish cannot be found;
+      };
+
+      console.log(findFish(fishInFishTank ,"white-spotted goldfish"));
